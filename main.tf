@@ -55,7 +55,7 @@ resource "aws_route_table_association" "subnet-c-route-table-association" {
 }
 
 resource "aws_instance" "instance" {
-  ami                         = "ami-085ed5922c6881dd6"
+  ami                         = data.ami-085ed5922c6881dd6
   instance_type               = "t2.small"
   vpc_security_group_ids      = [ aws_security_group.security-group.id ]
   subnet_id                   = aws_subnet.subnet-a.id
